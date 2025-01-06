@@ -59,19 +59,6 @@ void setup() {
 void loop() {
   unsigned long currentMillis = millis();
 
-  // Bluetooth oder Serial-Befehl verarbeiten
-  if (Serial.available()) {
-    char command = Serial.read();
-    processCommand(command);
-  }
-
-  if (BTSerial.available()) {
-    char command = BTSerial.read();
-    Serial.print("Bluetooth empfangen: ");
-    Serial.println(command);
-    processCommand(command);
-  }
-
   // Automodus aktiv
   if (autoMode) {
     // 1. Abstand prüfen (alle 500 ms)
